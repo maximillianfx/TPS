@@ -1,0 +1,240 @@
+
+/*** arquivo.h ***/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//Nó para lista de disciplinas
+typedef struct disciplina
+{
+    char nome[40];
+    char prof[50];
+    char codigo[8];
+    int creditos;
+    char avisos[100];
+    struct aluno *matriculados;
+    struct disciplina *ant;
+    struct disciplina *prox;
+}DISCIPLINA;
+
+//Nó para lista de alunos
+typedef struct aluno
+{
+    char nome[50];
+    int matricula;
+    char curso[30];
+    int presenca;
+    char bluetooth[40];
+    struct aluno *ant;
+    struct aluno *prox;
+}ALUNO;
+
+DISCIPLINA* CriaListaD(void);
+DISCIPLINA* InsereListaD(DISCIPLINA *lista, char *nome, char *prof, char *codigo, int creditos, char *avisos);
+void ImprimeListaD(DISCIPLINA *lista)
+void RetiraListaD(DISCIPLINA *lista, char *codigo);
+void LiberaListaD(DISCIPLINA *lista);
+ALUNO* CriaListaA(void);
+ALUNO* InsereListaA(ALUNO *lista, char *nome, int matricula, char *curso, char *bluetooth);
+void ImprimeListaA(ALUNO *lista);
+void RetiraListaA(ALUNO *lista, char *matricula);
+void LiberaListaA(ALUNO *lista);
+//TODO busca por código do bluetooth
+
+
+/*** arquivo.c ***/
+
+//Cria uma lista de disciplinas
+DISCIPLINA* CriaListaD(void)
+{
+    return NULL;
+}
+
+//Insere um nó na lista de disciplinas
+DISCIPLINA* InsereListaD(DISCIPLINA *lista, char *nome, char *prof, char *codigo, int creditos, char *avisos)
+{
+    DISCIPLINA *p, *aux;
+
+    if(lista == NULL) //Caso seja o primeiro nó
+    {
+        p = (DISCIPLINA*)malloc(sizeof(DISCIPLINA)); //Adiciona na lista
+        strcpy(p->nome, nome);
+        strcpy(p->prof, prof);
+        strcpy(p->codigo, codigo);
+        p->creditos = creditos;
+        strcpy(p->avisos, avisos);
+        p->matriculados = NULL;
+
+        p->prox = NULL; //Organiza os ponteiros
+        p->ant = NULL
+        return p;
+    }
+    else //Caso não seja o primeiro nó
+    {
+        for(aux = lista;aux != NULL;aux = aux->prox) //Roda a lista toda
+        {
+            if(strcmp(codigo, aux->codigo) == 0) //Caso já tenha aquela disciplina na lista
+            {
+                return lista; //Retorna ela mesma
+            }
+            else if((strcmp(codigo, aux->codigo) > 0)&&(strcmp(aux->prox->codigo, codigo) > 0)) //Caso não tenha a disciplina
+            {
+                p = (DISCIPLINA*)malloc(sizeof(DISCIPLINA)); //Adiciona ela na lista
+                strcpy(p->nome, nome);
+                strcpy(p->prof, prof);
+                strcpy(p->codigo, codigo);
+                p->creditos = creditos;
+                strcpy(p->avisos, avisos);
+                p->matriculados = NULL;
+
+                p->prox = aux->prox->ant; //Organiza os ponteiros
+                aux->prox->ant = p;
+                aux->prox = p;
+                p->ant = aux;
+
+                return lista;
+            }
+        }
+    }
+}
+
+//Retira elemento da lista de disciplinas com o código pedido
+void RetiraListaD(DISCIPLINA *lista, char *codigo)
+{
+    DISCIPLINA *aux;
+
+    for(aux = lista;aux != NULL;aux = aux->prox) //Roda a lista toda
+    {
+        if(strcmp(aux->codigo, codigo) == 0) //Caso seja o elemento que tem aquele código
+        {
+            aux->ant->prox = aux->prox;
+            aux->prox->ant = aux->ant
+            free(aux);
+        }
+    }
+}
+
+//Imprime a lista de disciplinas
+void ImprimeListaD(DISCIPLINA *lista)
+{
+    DISCIPLINA *aux;
+
+    for(aux = lista;aux !=NULL;aux = aux->prox)
+    {
+        printf("/n/nDisciplina: %s", aux->nome);
+        printf("/n  Professor: %s", aux->prof);
+        printf("/n  Codigo: %s", aux->codigo);
+        printf("/n  Creditos: %d", aux->creditos);
+        printf("/n  Avisos: %s", aux->avisos);
+    }
+}
+
+//Libera a lista
+void LiberaListaD(DISCIPLINA *lista)
+{
+    DISCIPLINA *aux;
+
+    while(lista != NULL)
+    {
+        aux = lista->prox;
+        free(lista);
+        lista = aux;
+    }
+}
+
+//Cria uma lista de alunos
+ALUNO* CriaListaA(void)
+{
+    return NULL;
+}
+
+//Insere um nó na lista de alunos
+ALUNO* InsereListaA(ALUNO *lista, char *nome, int matricula, char *curso, char *bluetooth)
+{
+    ALUNO *p, *aux;
+
+    if(lista == NULL) //Caso seja o primeiro nó
+    {
+        p = (ALUNO*)malloc(sizeof(ALUNO)); //Adiciona na lista
+        strcpy(p->nome, nome);
+        p->matricula = matricula;
+        strcpy(p->curso, curso);
+        presenca = 0;
+        p->bluetooth = bluetooth;
+
+        p->prox = NULL; //Organiza os ponteiros
+        p->ant = NULL
+        return p;
+    }
+    else //Caso não seja o primeiro nó
+    {
+        for(aux = lista;aux != NULL;aux = aux->prox) //Roda a lista toda
+        {
+            if(aux->matricula == matricula) //Caso já tenha aquele aluno na lista
+            {
+                return lista; //Retorna ela mesma
+            }
+            else if((matricula > aux->matricula)&&(aux->prox->matricula > matricula)) //Caso não tenha o aluno
+            {
+                p = (ALUNO*)malloc(sizeof(ALUNO)); //Adiciona na lista
+                strcpy(p->nome, nome);
+                p->matricula = matricula;
+                strcpy(p->curso, curso);
+                presenca = 0;
+                p->bluetooth = bluetooth;
+
+                p->prox = aux->prox->ant; //Organiza os ponteiros
+                aux->prox->ant = p;
+                aux->prox = p;
+                p->ant = aux;
+
+                return lista;
+            }
+        }
+    }
+}
+
+//Retira elemento da lista de alunos com a matrícula pedida
+void RetiraListaA(ALUNO *lista, char *matricula)
+{
+    ALUNO *aux;
+
+    for(aux = lista;aux != NULL;aux = aux->prox) //Roda a lista toda
+    {
+        if(aux->matricula == matricula) //Caso seja o elemento que tem aquela matrícula
+        {
+            aux->ant->prox = aux->prox;
+            aux->prox->ant = aux->ant
+            free(aux);
+        }
+    }
+}
+
+//Imprime a lista de alunos
+void ImprimeListaA(ALUNO *lista)
+{
+    ALUNO *aux;
+
+    for(aux = lista;aux !=NULL;aux = aux->prox)
+    {
+        printf("/n/n  Aluno: %s", aux->nome);
+        printf("/n    Matricula: %d", aux->matricula);
+        printf("/n    Curso: %s", aux->curso);
+        printf("/n    Presenca: %d", aux->presenca);
+        printf("/n    Bluetooth: %s", aux->bluetooth);
+    }
+}
+
+//Libera a lista
+void LiberaListaA(ALUNO *lista)
+{
+    ALUNO *aux;
+
+    while(lista != NULL)
+    {
+        aux = lista->prox;
+        free(lista);
+        lista = aux;
+    }
+}
