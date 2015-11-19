@@ -32,15 +32,15 @@ typedef struct aluno
 
 DISCIPLINA* CriaListaD(void);
 DISCIPLINA* InsereListaD(DISCIPLINA *lista, char *nome, char *prof, char *codigo, int creditos, char *avisos);
-void ImprimeListaD(DISCIPLINA *lista)
 void RetiraListaD(DISCIPLINA *lista, char *codigo);
+void ImprimeListaD(DISCIPLINA *lista);
 void LiberaListaD(DISCIPLINA *lista);
 ALUNO* CriaListaA(void);
 ALUNO* InsereListaA(ALUNO *lista, char *nome, int matricula, char *curso, char *bluetooth);
+void RetiraListaA(ALUNO *lista, int matricula);
 void ImprimeListaA(ALUNO *lista);
-void RetiraListaA(ALUNO *lista, char *matricula);
 void LiberaListaA(ALUNO *lista);
-//TODO busca por código do bluetooth
+ALUNO* BuscaAluno(ALUNO *lista, char *bluetooth);
 
 
 /*** arquivo.c ***/
@@ -196,7 +196,7 @@ ALUNO* InsereListaA(ALUNO *lista, char *nome, int matricula, char *curso, char *
 }
 
 //Retira elemento da lista de alunos com a matrícula pedida
-void RetiraListaA(ALUNO *lista, char *matricula)
+void RetiraListaA(ALUNO *lista, int matricula)
 {
     ALUNO *aux;
 
@@ -237,4 +237,19 @@ void LiberaListaA(ALUNO *lista)
         free(lista);
         lista = aux;
     }
+}
+
+//Busca aluno dentro de uma lista com o código do bluetooth
+ALUNO* BuscaAluno(ALUNO *lista, char *bluetooth)
+{
+    ALUNO *aux;
+
+    for(aux = lista;aux != NULL;aux = aux->prox) //Roda a lista toda
+    {
+        if(strcmp(aux->bluetooth, bluetooth) == 0) //Caso seja o elemento que tem aquela matrícula
+        {
+            return(aux);
+        }
+    }
+    return(NULL);
 }
