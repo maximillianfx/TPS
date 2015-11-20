@@ -1,0 +1,18 @@
+Disciplina:
+TopicosEspeciaisEmProcessamentoDeSinais
+JoseEdilGuimaraes
+123456
+4
+Aula agora.
+
+Aluno:
+NomeDeAlguem
+140056734
+EngenhariaEletrica
+abcdef12gh
+
+Aluno:
+NomeDeMaisAlguem
+110069585
+EngenhariaDaComputacao
+abc123def
