@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--android:innerRadiusRatio="3"-->
+    <!--android:shape="ring"-->
+    <!--android:thickness="10dp"-->
+    <!--android:useLevel="false"-->
+    <corners android:radius="100dp" />
+
+    <stroke
+        android:width="1dp"
+        android:color="#FFFFFF" />
+</shape>
+<!-- From: file:/Users/robinho/Desktop/TPS_1-1.2/TPS_1-1.0/app/src/main/res/drawable/ovalbutton.xml -->

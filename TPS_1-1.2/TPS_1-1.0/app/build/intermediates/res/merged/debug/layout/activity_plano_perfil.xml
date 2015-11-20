@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:background="@drawable/sqaure_upimage"
+        android:layout_width="match_parent"
+        android:layout_height="218dp"
+        android:id="@+id/backUpimg"
+        android:layout_x="0dp"
+        android:layout_y="0dp" />
+
+    <ImageButton
+        android:background="@drawable/ovalbutton"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:id="@+id/fotoButton"
+        android:layout_x="135dp"
+        android:layout_y="25dp"
+        android:layout_below="@+id/voltar_buttonAc"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Topicos"
+        android:id="@+id/nameMateria"
+        android:layout_x="33dp"
+        android:layout_y="160dp"
+        android:textColor="#4bc2ff"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toEndOf="@+id/voltar_buttonAc"
+        android:layout_marginRight="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="em Processamentos de Sinais"
+        android:id="@+id/textView"
+        android:layout_x="104dp"
+        android:layout_y="160dp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/fotoButton"
+        android:layout_toEndOf="@+id/avisosLabel"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp" />
+
+    <ImageButton
+        android:background="@drawable/voltar_button"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:id="@+id/voltar_buttonAc"
+        android:layout_x="21dp"
+        android:layout_y="9dp"
+        android:layout_alignStart="@+id/infoLabel"
+        android:layout_marginTop="10dp" />
+
+    <ImageView
+        android:background="@drawable/line_draw"
+        android:layout_width="wrap_content"
+        android:layout_height="5dp"
+        android:id="@+id/imageView"
+        android:layout_x="0dp"
+        android:layout_y="218dp"
+        android:layout_below="@id/backUpimg"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Informacoes:"
+        android:id="@+id/infoLabel"
+        android:layout_x="27dp"
+        android:layout_y="241dp"
+        android:textSize="20dp"
+        android:textColor="#a1a1a1"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/fotoButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Avisos:"
+        android:id="@+id/avisosLabel"
+        android:layout_x="27dp"
+        android:layout_y="366dp"
+        android:textSize="20dp"
+        android:textColor="#a1a1a1"
+        android:layout_below="@+id/infoLabel"
+        android:layout_alignStart="@+id/infoLabel"
+        android:layout_marginTop="97dp"
+        android:layout_marginLeft="10dp" />
+
+    <!--<ListView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:id="@+id/listView"-->
+        <!--android:layout_below="@+id/infoLabel"-->
+        <!--android:layout_alignStart="@+id/nameMateria"-->
+        <!--android:layout_alignEnd="@+id/textView" />-->
+
+    <!--<ListView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/listView3"-->
+        <!--android:layout_below="@+id/avisosLabel"-->
+        <!--android:layout_alignStart="@+id/listView"-->
+        <!--android:layout_alignEnd="@+id/listView" />-->
+
+
+</RelativeLayout><!-- From: file:/Users/robinho/Desktop/TPS_1-1.2/TPS_1-1.0/app/src/main/res/layout/activity_plano_perfil.xml -->

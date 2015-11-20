@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fundo_ok">
+
+
+    <Button
+        android:background="@drawable/button_sincr"
+        android:id="@+id/btnConectar"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text=""
+        android:layout_marginLeft="89dp"
+        style="@style/botao_teste"
+
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:background="@drawable/voltar_button"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        android:id="@+id/voltar_buttonDc"
+        android:layout_x="21dp"
+        android:layout_y="9dp"
+        android:layout_marginTop="29dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+   <!-- <Button
+        android:background="@drawable/blue_button"
+        android:id="@+id/btnLED"
+        android:layout_width="304dp"
+        android:layout_height="wrap_content"
+        android:text="Ativar LED"
+        style="@style/botao_azul"
+        android:layout_x="38dp"
+        android:layout_y="130dp"
+        />
+    -->
+
+
+</RelativeLayout><!-- From: file:/Users/robinho/Desktop/TPS_1-1.2/TPS_1-1.0/app/src/main/res/layout/activity_plano_principal.xml -->

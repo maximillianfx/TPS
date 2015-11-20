@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <ListView
+        android:layout_width="370dp"
+        android:layout_height="210dp"
+        android:id="@+id/listView2"
+        android:layout_x="10dp"
+        android:layout_y="352dp"
+        style="@layout/list_view"
+        android:choiceMode="singleChoice"
+        android:clickable="true"
+        android:drawSelectorOnTop="false"
+        android:headerDividersEnabled="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true" />
+
+
+    <ImageView
+        android:background="@drawable/sqaure_upimage"
+        android:layout_width="match_parent"
+        android:layout_height="218dp"
+        android:id="@+id/backUpimg"
+        android:layout_x="0dp"
+        android:layout_y="0dp" />
+
+    <ImageView
+        android:background="@drawable/sqaure_faltas"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/squareFaltas"
+        android:layout_x="0dp"
+        android:layout_y="217dp" />
+
+    <ImageButton
+        android:background="@drawable/add_image"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:id="@+id/materia_bt"
+        android:layout_x="115dp"
+        android:layout_y="174dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Tópicos em Processamento de Sinais"
+        android:id="@+id/nomeMateria"
+        android:layout_x="123dp"
+        android:layout_y="185dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="25%"
+        android:id="@+id/pctFaltas"
+        android:layout_x="75dp"
+        android:layout_y="250dp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Porcentagem de Faltas"
+        android:id="@+id/txtFaltas"
+        android:layout_x="25dp"
+        android:layout_y="276dp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Jose Edil"
+        android:id="@+id/numAulas"
+        android:layout_x="246dp"
+        android:layout_y="257dp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Professor"
+        android:id="@+id/txtAulas"
+        android:layout_x="276dp"
+        android:layout_y="280dp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Matheus Veleci"
+        android:ems="10"
+        android:id="@+id/nomeProfile"
+        android:layout_x="130dp"
+        android:layout_y="63dp"
+        android:textColor="#FFFFFF"
+        android:allowUndo="false"
+        android:editable="true"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/curso"
+        android:layout_x="134dp"
+        android:layout_y="99dp"
+        android:textColor="#FFFFFF"
+        android:text="Engenharia da Computação"
+        android:textSize="12dp"
+        android:editable="true" />
+
+    <TextView
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:text="Alunos Presentes:"
+        android:id="@+id/alunosPresentes"
+        android:layout_x="15dp"
+        android:layout_y="333dp" />
+
+    <ImageButton
+        android:background="@drawable/ovalbutton"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:id="@+id/fotoButton"
+        android:layout_x="8dp"
+        android:layout_y="45dp"
+        android:onClick="onClick"
+        />
+
+
+</AbsoluteLayout><!-- From: file:/Users/robinho/Desktop/TPS_1-1.2/TPS_1-1.0/app/src/main/res/layout/activity_plano_aluno.xml -->
